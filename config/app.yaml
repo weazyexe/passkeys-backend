@@ -5,4 +5,4 @@ webauthn:
     - "https://surface.local"
 
 server:
-  port: "9001"
+  port: "443"
