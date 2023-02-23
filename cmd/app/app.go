@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"github.com/weazyexe/passkeys/internal/app"
+	"path/filepath"
+)
+
+var configPath = filepath.Join("config", "app.yaml")
 
 func main() {
-	fmt.Println("Hello, World!")
+	app.Run(configPath)
 }

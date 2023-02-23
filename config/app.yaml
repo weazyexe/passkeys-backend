@@ -1,0 +1,8 @@
+webauthn:
+  rpDisplayName: "Passkeys Demo"
+  rpId: "surface.local"
+  rpOrigins:
+    - "https://surface.local"
+
+server:
+  port: "9001"
