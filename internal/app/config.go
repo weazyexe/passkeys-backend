@@ -7,17 +7,12 @@ import (
 
 type PasskeysDemoConfig struct {
 	Webauthn Webauthn `yaml:"webauthn"`
-	Server   Server   `yaml:"server"`
 }
 
 type Webauthn struct {
 	RPDisplayName string   `yaml:"rpDisplayName"`
 	RPID          string   `yaml:"rpId"`
 	RPOrigins     []string `yaml:"rpOrigins"`
-}
-
-type Server struct {
-	Port string `yaml:"port"`
 }
 
 func ReadConfig(path string) (*PasskeysDemoConfig, error) {

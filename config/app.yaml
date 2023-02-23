@@ -3,6 +3,3 @@ webauthn:
   rpId: "surface.local"
   rpOrigins:
     - "https://surface.local"
-
-server:
-  port: "5000"
