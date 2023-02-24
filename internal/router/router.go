@@ -6,6 +6,12 @@ import (
 )
 
 func Setup(r *gin.Engine) {
-	r.POST("/auth/register/request", handlers.RequestRegistrationHandler)
-	r.POST("/auth/register/response", handlers.ResponseRegistrationHandler)
+	r.StaticFile("/.well-known/assetlinks.json", "./assets/assetlinks.json")
+
+	authRouter := r.Group("/auth")
+	{
+		authRouter.POST("/register/request", handlers.RequestRegistrationHandler)
+		authRouter.POST("/register/response", handlers.ResponseRegistrationHandler)
+	}
+
 }

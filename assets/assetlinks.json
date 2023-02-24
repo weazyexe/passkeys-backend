@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "dev.weazyexe.passkeys",
+    "sha256_cert_fingerprints":
+    ["7D:06:1B:08:61:E6:85:79:73:B4:CB:3C:09:9A:8D:A3:C9:6F:9F:73:8C:D8:76:BD:1C:86:51:AF:1A:E0:84:58"]
+  }
+}]

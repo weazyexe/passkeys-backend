@@ -1,5 +1,5 @@
 webauthn:
   rpDisplayName: "Passkeys Demo"
-  rpId: "surface.local"
+  rpId: "guarded-dusk-66137.herokuapp.com"
   rpOrigins:
-    - "https://surface.local"
+    - "https://guarded-dusk-66137.herokuapp.com/"
