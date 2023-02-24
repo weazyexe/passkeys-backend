@@ -21,7 +21,7 @@ func Run(configPath string) {
 	}
 
 	if err := godotenv.Load(); err != nil {
-		log.Fatal("error while loading .env file")
+		log.Print("error while loading .env file")
 	}
 
 	fido2.Initialize(config.Webauthn.RPDisplayName, config.Webauthn.RPID, config.Webauthn.RPOrigins)
