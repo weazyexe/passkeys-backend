@@ -1,1 +1,0 @@
-web: passkeys-demo
