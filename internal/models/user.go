@@ -4,8 +4,9 @@ import "github.com/go-webauthn/webauthn/webauthn"
 
 type User struct {
 	webauthn.User
-	ID       string
-	Username string
+	ID          string
+	Username    string
+	Credentials []webauthn.Credential
 }
 
 func (u *User) WebAuthnID() []byte {

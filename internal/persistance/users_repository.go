@@ -1,6 +1,7 @@
 package persistance
 
 import (
+	"github.com/go-webauthn/webauthn/webauthn"
 	"github.com/weazyexe/passkeys/internal/db"
 	"github.com/weazyexe/passkeys/internal/models"
 )
@@ -23,4 +24,12 @@ func (r *UsersRepository) IsUserExists(username string) bool {
 
 func (r *UsersRepository) CreateUser(user models.User) {
 	db.CreateUser(user)
+}
+
+func (r *UsersRepository) GetUser(username string) (*models.User, error) {
+	return db.GetUser(username)
+}
+
+func (r *UsersRepository) SaveCredentialForUser(userId string, credential webauthn.Credential) {
+	db.SaveCredentialForUser(userId, credential)
 }
