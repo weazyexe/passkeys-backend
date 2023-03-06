@@ -26,8 +26,12 @@ func (r *UsersRepository) CreateUser(user models.User) {
 	db.CreateUser(user)
 }
 
-func (r *UsersRepository) GetUser(username string) (*models.User, error) {
-	return db.GetUser(username)
+func (r *UsersRepository) GetUserByID(userId string) (*models.User, error) {
+	return db.GetUserByID(userId)
+}
+
+func (r *UsersRepository) GetUserByUsername(username string) (*models.User, error) {
+	return db.GetUserByUsername(username)
 }
 
 func (r *UsersRepository) SaveCredentialForUser(userId string, credential webauthn.Credential) {

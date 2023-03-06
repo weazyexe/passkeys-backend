@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"encoding/base64"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/go-webauthn/webauthn/protocol"
@@ -30,7 +29,7 @@ func RequestRegistrationHandler(c *gin.Context) {
 		return
 	}
 
-	user, err := usersRepository.GetUser(body.Username)
+	user, err := usersRepository.GetUserByUsername(body.Username)
 	if err != nil {
 		user = &models.User{
 			ID:       uuid.New().String(),
@@ -72,15 +71,7 @@ func ResponseRegistrationHandler(c *gin.Context) {
 		return
 	}
 
-	decodedId, err := base64.URLEncoding.DecodeString(string(session.UserID))
-	if err != nil {
-		errorMessage := fmt.Sprintf("can't decode user ID from base64 in session: %s", err)
-		log.Print(errorMessage)
-		c.IndentedJSON(http.StatusBadRequest, models.Error{Message: errorMessage})
-		return
-	}
-
-	user, err := usersRepository.GetUser(string(decodedId))
+	user, err := usersRepository.GetUserByID(string(session.UserID))
 	if err != nil {
 		errorMessage := fmt.Sprintf("error while finding the user by session: %s", err)
 		log.Print(errorMessage)

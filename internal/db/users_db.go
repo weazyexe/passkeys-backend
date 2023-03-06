@@ -21,7 +21,16 @@ func CreateUser(user models.User) {
 	usersDb = append(usersDb, user)
 }
 
-func GetUser(username string) (*models.User, error) {
+func GetUserByID(userId string) (*models.User, error) {
+	for _, user := range usersDb {
+		if user.ID == userId {
+			return &user, nil
+		}
+	}
+	return nil, errors.New("user does not exist")
+}
+
+func GetUserByUsername(username string) (*models.User, error) {
 	for _, user := range usersDb {
 		if user.Username == username {
 			return &user, nil
