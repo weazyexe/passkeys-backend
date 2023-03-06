@@ -2,4 +2,5 @@ webauthn:
   rpDisplayName: "Passkeys Demo"
   rpId: "guarded-dusk-66137.herokuapp.com"
   rpOrigins:
-    - "https://guarded-dusk-66137.herokuapp.com/"
+    - "https://guarded-dusk-66137.herokuapp.com"
+    - "android:apk-key-hash:fQYbCGHmhXlztMs8CZqNo8lvn3OM2Ha9HIZRrxrghFg"
