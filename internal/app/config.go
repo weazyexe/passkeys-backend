@@ -7,12 +7,17 @@ import (
 
 type PasskeysDemoConfig struct {
 	Webauthn Webauthn `yaml:"webauthn"`
+	Ssl      SSL      `yaml:"ssl"`
 }
 
 type Webauthn struct {
 	RPDisplayName string   `yaml:"rpDisplayName"`
 	RPID          string   `yaml:"rpId"`
 	RPOrigins     []string `yaml:"rpOrigins"`
+}
+type SSL struct {
+	TlsCertificatePath string `yaml:"tlsCertificate"`
+	TlsKeyPath         string `yaml:"tlsKey"`
 }
 
 func ReadConfig(path string) (*PasskeysDemoConfig, error) {
